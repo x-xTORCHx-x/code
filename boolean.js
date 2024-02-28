@@ -1,4 +1,6 @@
-const number1 = 10;
-const number2 = 5;
+const usuariologin = true
+const contapaga = false
 
-console.log(number1 > number2)
+console.log(0 == false)
+console.log("" == false)
+
