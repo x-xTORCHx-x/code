@@ -1,23 +1,32 @@
-function quicksort(arr){
-    if(arr.length <= 1){
-        return arr;
-    }
-let pivot = arr(Math.floor(arr.length/2));
+class ContaBancaria { 
+    constructor(saldoInicial) {
+        let _saldo = saldoInicial; 
+this.getSaldo = function() {
+return _saldo;
+};
+this.depositar = function(valor) {
+if (valor > 0) {
+_saldo += valor;
+console.log(`Depósito de R$${valor} realizado com sucesso.`);
+} else {
+console.log("Valor de depósito inválido.");
+}
+};
+this.sacar = function(valor) {
+if (valor > 0 && valor <= _saldo) {
+    _saldo -= valor;
+console.log(`Saque de R$${valor} realizado com sucesso.`);
+} else {
+    console.log("Valor de saque inválido ou saldo insuficiente.");
+}
+    };
+}
+}
 
-let left = [];
-let middle = [];
-let right = [];
-
-for(let element of arr){
-    if (element < pivot){
-        left.push(element);
-}else if (element === pivot){
-}else{
-    right.push(element);
-}
-}
-return quicksort(left).concat(middle).concat(quicksort(right));
-}
-function main(){
-    let arr = [3,6]
-}
+let conta = new ContaBancaria(1000);
+console.log(conta.getSaldo());
+conta.depositar(500);
+console.log(conta.getSaldo()); 
+conta.sacar (200);
+console.log(conta.getSaldo());
+conta.sacar (2000);
